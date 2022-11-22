@@ -1,1 +1,1 @@
-# A Webdev Masterpiece Presented by Websmallteam
+# A Webdev Masterpiece Presented by WebSmallTeam
