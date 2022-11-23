@@ -1,20 +1,20 @@
 
 import * as moviesDao from '../movies/movies-dao.js'
 
-let movies =[
-  {
-    "_id":"123",
-    "title":"Avatar"
-  },
-  {
-    "_id":"234",
-    "title":"StarWar"
-  },
-  {
-    "_id":"345",
-    "title":"Lord of the Rings"
-  }
-]
+// let movies =[
+//   {
+//     "_id":"123",
+//     "title":"Avatar"
+//   },
+//   {
+//     "_id":"234",
+//     "title":"StarWar"
+//   },
+//   {
+//     "_id":"345",
+//     "title":"Lord of the Rings"
+//   }
+// ]
 
 
 //movie crud api tests
