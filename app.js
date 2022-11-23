@@ -15,4 +15,4 @@ app.use(cors())
 app.use(express.json())
 MoviesController(app)
 
-app.listen(4000)
+app.listen(process.env.PORT ||4000)
