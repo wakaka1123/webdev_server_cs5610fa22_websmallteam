@@ -5,6 +5,10 @@ const ProfileSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    password: {
+        type: String,
+        required: true
+    },
     firstName: {
         type: String,
         required: true
@@ -18,18 +22,17 @@ const ProfileSchema = new mongoose.Schema({
         required: true,
         enum: ['Corporate','Individual-User','Admin']
     },
-    city: String,
     email: {
         type: String,
         required: true
     },
+    city: String,
     mobile: String,
     Iam: String,
     facebook: String,
     twitter: String,
     linkedin: String,
     instagram: String,
-    password: String,
     following:String,
     followers: String,
     review:String,

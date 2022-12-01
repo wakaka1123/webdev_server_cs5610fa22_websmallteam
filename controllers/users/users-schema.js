@@ -1,11 +1,42 @@
 import mongoose from 'mongoose';
 
 const usersSchema = new mongoose.Schema({
-    userName: String,
-    firstName: String,
-    lastName: String,
-    email: String,
-    password: String,
-}, {versionKey: false,collection: 'users'});
+    username: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    firstName: {
+        type: String,
+        required: true
+    },
+    lastName: {
+        type: String,
+        required: true
+    },
+    role :{
+        type: String,
+        required: true,
+        enum: ['Corporate','Individual-User','Admin']
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    city: String,
+    mobile: String,
+    Iam: String,
+    facebook: String,
+    twitter: String,
+    linkedin: String,
+    instagram: String,
+    following:String,
+    followers: String,
+    review:String,
+    favorites: String
+}, {versionKey: false,collection: 'profile'});
 
 export default usersSchema;
