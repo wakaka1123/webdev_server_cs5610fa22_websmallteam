@@ -9,11 +9,7 @@ const usersSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    firstName: {
-        type: String,
-        required: true
-    },
-    lastName: {
+    name: {
         type: String,
         required: true
     },
@@ -27,7 +23,7 @@ const usersSchema = new mongoose.Schema({
         required: true
     },
     city: String,
-    mobile: String,
+    phoneNumber: String,
     Iam: String,
     facebook: String,
     twitter: String,
@@ -37,6 +33,6 @@ const usersSchema = new mongoose.Schema({
     followers: String,
     review:String,
     favorites: String
-}, {versionKey: false,collection: 'profile'});
+}, {versionKey: false,collection: 'profile'},{typeKey: '$type'});
 
 export default usersSchema;
