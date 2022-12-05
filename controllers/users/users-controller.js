@@ -54,7 +54,8 @@ const usersController = (app) => {
 
     const profile = async (req, res) => {
         if (currentUser) {
-            res.json(currentUser)
+            const data = await findByUsername(currentUser.username)
+            res.json(data)
             return
         }
         res.sendStatus(403)
