@@ -9,11 +9,7 @@ const ProfileSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    firstName: {
-        type: String,
-        required: true
-    },
-    lastName: {
+    name: {
         type: String,
         required: true
     },
@@ -27,7 +23,7 @@ const ProfileSchema = new mongoose.Schema({
         required: true
     },
     city: String,
-    mobile: String,
+    phoneNumber: String,
     Iam: String,
     facebook: String,
     twitter: String,
