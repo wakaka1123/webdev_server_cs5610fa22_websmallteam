@@ -35,34 +35,39 @@ const usersController = (app) => {
             res.sendStatus(403)
             return
         }
-        const actualUser = await dao.createUser(user)
-        currentUser = actualUser
-        res.json(actualUser)
+        const currentUser = await dao.createUser(user)
+        req.session['currentUser'] = currentUser
+        res.json(currentUser)
     }
 
     const login = async (req, res) => {
         const credentials = req.body
-        const existingUser = await findByCredentials(credentials.username, credentials.password)
+        const existingUser = await dao.findByCredentials(credentials.username, credentials.password)
         if (!existingUser) {
 
             res.sendStatus(403)
             return
         }
-        currentUser = existingUser
+        req.session['currentUser'] = existingUser
+        // currentUser = existingUser
         res.json(existingUser)
+
     }
 
     const profile = async (req, res) => {
-        if (currentUser) {
-            const data = await findByUsername(currentUser.username)
-            res.json(data)
-            return
+        if (req.session['currentUser']) {
+            // const data = await findByUsername(currentUser.username)
+            // res.json(data)
+            // return
+            res.send(req.session['currentUser'])
+        } else {
+            res.sendStatus(403)
         }
-        res.sendStatus(403)
     }
 
     const logout = (req, res) => {
-        currentUser = null
+        req.session.destroy()
+        // currentUser = null
         res.sendStatus(200)
     }
 
