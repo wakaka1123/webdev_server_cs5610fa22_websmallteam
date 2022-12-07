@@ -8,6 +8,8 @@ import LikesController from "./controllers/likes/likes-controller.js";
 import ProfileController from "./controllers/profile/profile-controller.js";
 import UserController from "./controllers/users/users-controller.js"
 import SessionController from "./session-controller.js";
+import GooglePlacesController
+  from "./controllers/googleplaces/googleplaces-controller.js";
 
 
 const CONNECTION_STRING = 'mongodb+srv://wakaka:overmars89@cluster0.m9j6yue.mongodb.net/?retryWrites=true&w=majority'
@@ -33,6 +35,7 @@ HelloController(app)
 UserController(app)
 SessionController(app)
 ProfileController(app)
+GooglePlacesController(app)
 
 app.listen(process.env.PORT ||4000)
 
