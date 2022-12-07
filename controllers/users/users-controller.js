@@ -1,5 +1,6 @@
 import * as dao from './users-dao.js';
 import {findByCredentials, findByUsername} from "./users-dao.js";
+import * as profileDao from "../profile/profile-dao.js";
 
 let currentUser = null
 
@@ -14,6 +15,7 @@ const usersController = (app) => {
         const allUsers = await dao.findAllUsers()
         res.send(allUsers);
     }
+
 
     const deleteUser = async (req, res) => {
         const uid = req.params.uid
