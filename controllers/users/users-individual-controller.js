@@ -1,10 +1,9 @@
-import * as dao from './users-dao.js';
-import {findByCredentials, findByUsername} from "./users-dao.js";
-import * as profileDao from "../profile/profile-dao.js";
+import * as dao from './users-individual-dao.js';
+import {findByUsername} from "./users-individual-dao.js";
 
 let currentUser = null
 
-const usersController = (app) => {
+const usersIndividualController = (app) => {
     const createUser = async (req, res) => {
         const user = req.body
         const actualUser = await dao.createUser(user)
@@ -15,7 +14,6 @@ const usersController = (app) => {
         const allUsers = await dao.findAllUsers()
         res.send(allUsers);
     }
-
 
     const deleteUser = async (req, res) => {
         const uid = req.params.uid
@@ -73,15 +71,15 @@ const usersController = (app) => {
         res.sendStatus(200)
     }
 
-    app.post('/users', createUser)
-    app.get('/users', findAllUsers)
-    app.delete('/users/:uid', deleteUser)
-    app.put('/users/:uid', updateUser)
+    app.post('/individual-users', createUser)
+    app.get('/individual-users', findAllUsers)
+    app.delete('/individual-users/:uid', deleteUser)
+    app.put('/individual-users/:uid', updateUser)
 
-    app.post('/register', register)
+    app.post('/individual-register', register)
     app.post('/login', login)
     app.post('/profile', profile)
     app.post('/logout', logout)
 }
 
-export default usersController
+export default usersIndividualController
