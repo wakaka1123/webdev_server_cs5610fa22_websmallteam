@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const usersSchema = new mongoose.Schema({
+const usersIndividualSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true
@@ -9,11 +9,15 @@ const usersSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    name: {
+    firstName: {
         type: String,
         required: true
     },
-    role :{
+    lastName: {
+        type: String,
+        required: true
+    },
+    role : {
         type: String,
         required: true,
         enum: ['Corporate','Individual-User','Admin']
@@ -35,4 +39,4 @@ const usersSchema = new mongoose.Schema({
     favorites: String
 }, {versionKey: false,collection: 'profile'},{typeKey: '$type'});
 
-export default usersSchema;
+export default usersIndividualSchema;

@@ -6,7 +6,9 @@ import session from 'express-session'
 import HelloController from "./controllers/hello-controller.js";
 import LikesController from "./controllers/likes/likes-controller.js";
 import ProfileController from "./controllers/profile/profile-controller.js";
-import UserController from "./controllers/users/users-controller.js"
+import IndividualUserController from "./controllers/users/users-individual-controller.js"
+import CorporateUserController from "./controllers/users/users-corporate-controller.js"
+import AdminUserController from "./controllers/users/users-admin-controller.js"
 import SessionController from "./session-controller.js";
 import GooglePlacesController
   from "./controllers/googleplaces/googleplaces-controller.js";
@@ -32,7 +34,9 @@ app.use(express.json())
 MoviesController(app)
 LikesController(app)
 HelloController(app)
-UserController(app)
+IndividualUserController(app)
+CorporateUserController(app)
+AdminUserController(app)
 SessionController(app)
 ProfileController(app)
 GooglePlacesController(app)
