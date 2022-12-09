@@ -5,7 +5,7 @@ const reviewsSchema = mongoose.Schema({
     placeID: String,
     author: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'UserModel'
+        ref: 'UserIndividualModel'
     }
 }, {collection: 'reviews'})
 export default reviewsSchema
