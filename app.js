@@ -12,6 +12,11 @@ import AdminUserController from "./controllers/users/users-admin-controller.js"
 import SessionController from "./session-controller.js";
 import GooglePlacesController
   from "./controllers/googleplaces/googleplaces-controller.js";
+import CitiesController from "./controllers/cities/cities-controller.js";
+import ReviewsController from "./controllers/reviews/reviews-controller.js";
+import RestaurantsController
+  from "./controllers/restaturants/restaurants-controller.js";
+import MuseumsController from "./controllers/museums/museums-controller.js"
 
 
 const CONNECTION_STRING = 'mongodb+srv://wakaka:overmars89@cluster0.m9j6yue.mongodb.net/?retryWrites=true&w=majority'
@@ -40,6 +45,10 @@ AdminUserController(app)
 SessionController(app)
 ProfileController(app)
 GooglePlacesController(app)
+CitiesController(app)
+ReviewsController(app)
+RestaurantsController(app)
+MuseumsController(app)
 
 app.listen(process.env.PORT ||4000)
 
