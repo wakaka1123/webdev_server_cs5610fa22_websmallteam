@@ -1,5 +1,5 @@
 import * as dao from './users-individual-dao.js';
-import {findByUsername} from "./users-individual-dao.js";
+import {findByUsername, welcomeIndividual} from "./users-individual-dao.js";
 
 let currentUser = null
 
@@ -71,10 +71,16 @@ const usersIndividualController = (app) => {
         res.sendStatus(200)
     }
 
+    const welcomeIndividual = async (req,res)=>{
+        const welcomeIndividual = await dao.welcomeIndividual()
+        res.send(welcomeIndividual);
+    }
+
     app.post('/individual-users', createUser)
     app.get('/individual-users', findAllUsers)
     app.delete('/individual-users/:uid', deleteUser)
     app.put('/individual-users/:uid', updateUser)
+    app.get('/welcome-individual',welcomeIndividual)
 
     app.post('/individual-register', register)
     app.post('/login', login)
