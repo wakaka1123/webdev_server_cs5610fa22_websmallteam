@@ -21,3 +21,6 @@ export const deleteUser = (uid) =>
 export const updateUser = (uid, userUpdates) =>
     usersIndividualModel.updateOne({_id: uid},
         {$set: userUpdates})
+
+export const welcomeIndividual = () =>
+    usersIndividualModel.find().sort({_id:-1}).limit(3)
