@@ -17,6 +17,7 @@ import ReviewsController from "./controllers/reviews/reviews-controller.js";
 import RestaurantsController
   from "./controllers/restaturants/restaurants-controller.js";
 import MuseumsController from "./controllers/museums/museums-controller.js"
+import FollowsController from "./controllers/follows/follows-controller.js";
 
 
 const CONNECTION_STRING = 'mongodb+srv://wakaka:overmars89@cluster0.m9j6yue.mongodb.net/?retryWrites=true&w=majority'
@@ -49,6 +50,7 @@ CitiesController(app)
 ReviewsController(app)
 RestaurantsController(app)
 MuseumsController(app)
+FollowsController(app)
 
 app.listen(process.env.PORT ||4000)
 
