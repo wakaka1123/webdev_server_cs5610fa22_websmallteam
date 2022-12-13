@@ -18,6 +18,6 @@ export const findByCredentials = (username, password) =>
 export const deleteUser = (uid) =>
     usersCorporateModel.deleteOne({_id: uid})
 
-export const updateUser = (uid, userUpdates) =>
-    usersCorporateModel.updateOne({_id: uid},
+export const updateUser = (userUpdates) =>
+    usersCorporateModel.updateOne({_id: userUpdates._id},
         {$set: userUpdates})

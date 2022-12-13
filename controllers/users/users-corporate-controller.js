@@ -22,9 +22,8 @@ const usersCorporateController = (app) => {
     }
 
     const updateUser = async (req, res) => {
-        const uid = req.params.uid
         const updates = req.body
-        const status = await dao.updateUser(uid, updates)
+        const status = await dao.updateUser(updates)
         res.json(status)
     }
 
@@ -74,7 +73,7 @@ const usersCorporateController = (app) => {
     app.post('/users/corporate', createUser)
     app.get('/users/corporate', findAllUsers)
     app.delete('/users/corporate/:uid', deleteUser)
-    app.put('/users/corporate:uid', updateUser)
+    app.put('/users/corporate', updateUser)
 
     app.post('/register/corporate', register)
     app.post('/login', login)
