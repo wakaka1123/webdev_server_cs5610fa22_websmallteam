@@ -22,9 +22,8 @@ const usersIndividualController = (app) => {
     }
 
     const updateUser = async (req, res) => {
-        const uid = req.params.uid
         const updates = req.body
-        const status = await dao.updateUser(uid, updates)
+        const status = await dao.updateUser(updates)
         res.json(status)
     }
 
@@ -79,7 +78,7 @@ const usersIndividualController = (app) => {
     app.post('/individual-users', createUser)
     app.get('/individual-users', findAllUsers)
     app.delete('/individual-users/:uid', deleteUser)
-    app.put('/individual-users/:uid', updateUser)
+    app.put('/individual-user', updateUser)
     app.get('/welcome-individual',welcomeIndividual)
 
     app.post('/individual-register', register)
